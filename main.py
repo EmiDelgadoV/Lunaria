@@ -81,11 +81,11 @@ class LunariaApp:
         # Gráfico (Canvas)
         canvas_luna = LunarCanvas(ventana, size=200)
         canvas_luna.pack(pady=20)
+
         canvas_luna.dibujar_luna(datos['iluminacion'], datos['fase_texto'])
 
         # Porcentaje
-        tk.Label(ventana, text=f"Iluminación: {datos['iluminacion']}%", 
-                 bg=COLOR_FONDO, fg=COLOR_TEXTO).pack(pady=10)
+        
 
     # ==========================================
     # CASO 2: FECHA ESPECÍFICA
