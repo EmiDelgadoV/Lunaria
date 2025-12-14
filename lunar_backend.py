@@ -1,10 +1,24 @@
 import ephem
+import re
 from datetime import datetime
 
 class CalculadoraLunar:
-    """
-    se encarga de la logica astronomica, solo devuelve datos.
-    """
+    #se encarga de la logica astronomica, solo devuelve datos.
+    def normalizar_fecha(self, fecha_str):
+        fecha_str = re.sub(r'[-.]', '/', fecha_str)
+        try:
+            partes = fecha_str.split('/')
+            if len(partes) != 3:
+                return None
+            d, m, y = partes
+            if len(y) == 2:
+                y = '20' + y
+
+            fecha_limpia = f"{d.zfill(2)}/{m.zfill(2)}/{y}"
+            return datetime.strptime(fecha_limpia, '%d/%m/%Y')
+        except ValueError:
+            return None
+
 
     def obtener_fase_actual(self, fecha=None):
         if fecha is None:
