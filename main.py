@@ -81,7 +81,7 @@ class LunariaApp:
         # Gráfico (Canvas)
         canvas_luna = LunarCanvas(ventana, size=200)
         canvas_luna.pack(pady=20)
-        canvas_luna.dibujar_luna(datos['iluminacion'])
+        canvas_luna.dibujar_luna(datos['iluminacion'], datos['fase_texto'])
 
         # Porcentaje
         tk.Label(ventana, text=f"Iluminación: {datos['iluminacion']}%", 
@@ -136,11 +136,8 @@ class LunariaApp:
 
         canvas_luna = LunarCanvas(ventana, size=200)
         canvas_luna.pack(pady=20)
-        canvas_luna.dibujar_luna(datos['iluminacion'])
+        canvas_luna.dibujar_luna(datos['iluminacion'], datos['fase_texto'])
 
-    # ==========================================
-    # CASO 3: PRÓXIMA FASE
-    # ==========================================
     def abrir_ventana_proxima(self):
         ventana = tk.Toplevel(self.root)
         ventana.title("Consultar Siguiente Fase")
