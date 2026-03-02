@@ -23,7 +23,7 @@
 
 1.  Clona el repositorio:
     ```bash
-    git clone [https://github.com/TuUsuario/Lunaria.git](https://github.com/TuUsuario/Lunaria.git)
+    git clone https://github.com/EmiDelgadoV/Lunaria.git
     ```
 2.  Instala las dependencias:
     ```bash
